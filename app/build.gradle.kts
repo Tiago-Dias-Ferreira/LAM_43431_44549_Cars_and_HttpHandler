@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.lam_43431_44549_cars_and_models"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.lam_43431_44549_cars_and_models"

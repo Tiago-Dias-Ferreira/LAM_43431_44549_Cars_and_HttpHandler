@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LAM_43431_44549_Cars_and_Models"
         tools:targetApi="31">
+        <activity android:name=".ShowCar"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

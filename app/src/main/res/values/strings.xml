@@ -3,4 +3,6 @@
     <string name="cars">Cars</string>
     <string name="logoKey">Logo Key</string>
     <string name="brandKey">Brand Key</string>
+    <string name="models">Models</string>
+    <string name="goBack">Go back</string>
 </resources>

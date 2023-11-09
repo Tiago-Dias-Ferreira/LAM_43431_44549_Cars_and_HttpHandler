@@ -17,6 +17,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         imageView = itemView.findViewById(R.id.imageView);
         textView = itemView.findViewById(R.id.textView2);
-
     }
+
+
 }

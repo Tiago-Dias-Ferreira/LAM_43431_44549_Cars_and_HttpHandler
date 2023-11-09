@@ -8,9 +8,9 @@ import java.util.List;
 
 public class Car {
 
-    String name;
-    int logo;
-    List<Model> modelsList;
+    private String name;
+    private int logo;
+    private List<Model> modelsList;
 
     public Car(String name, int logo){
         this.name = name;
@@ -26,6 +26,9 @@ public class Car {
         return logo;
     }
 
+    public List<Model> getModelsList(){
+        return this.modelsList;
+    }
     public void addModel(String brand, int logo){
         Model model = new Model(brand,logo);
         modelsList.add(model);

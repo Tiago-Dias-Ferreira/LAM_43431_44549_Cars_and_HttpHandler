@@ -18,8 +18,8 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> implements View.OnClickListener{
 
-    Context context;
-    List<Car> cars;
+    private Context context;
+    private List<Car> cars;
 
     public MyAdapter(Context context, List<Car> cars){
         this.context = context;
@@ -30,9 +30,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> implements Vie
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
         View view;
+        MyViewHolder myViewHolder;
+
         view = LayoutInflater.from(context).inflate(R.layout.layout_line, parent, false);
-        //return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.activity_viewer, parent, false));
-        MyViewHolder myViewHolder = new MyViewHolder(view);
+
+        myViewHolder = new MyViewHolder(view);
         view.setOnClickListener(this);
         return myViewHolder;
     }
@@ -51,21 +53,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> implements Vie
 
     @Override
     public void onClick(View v){
-        TextView carBrand = (TextView) v.findViewById(R.id.textView2);
-
-        //TextView carBrand;
+        TextView carBrand;
         String brand;
         ImageView carLogo;
         int logo;
         Intent intent;
 
-        //carBrand = v.findViewById(R.id.textView2);
+        carBrand = (TextView) v.findViewById(R.id.textView2);
         carLogo = v.findViewById(R.id.imageView);
-
         brand = carBrand.getText().toString();
         logo = (Integer) carLogo.getTag();
-
-        Toast.makeText(v.getContext(), carBrand.getText().toString(), Toast.LENGTH_LONG).show();
 
         intent = new Intent(context, ShowCar.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

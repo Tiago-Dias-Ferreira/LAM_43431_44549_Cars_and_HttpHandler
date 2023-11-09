@@ -29,7 +29,7 @@ public class ShowCar extends AppCompatActivity {
 
         for(Car car : MainActivity.cars){
             if(car.getName().equals(brand)){
-                recyclerView.setAdapter(new MyAdapterModels(getApplicationContext(), car.modelsList));
+                recyclerView.setAdapter(new MyAdapterModels(getApplicationContext(), car.getModelsList()));
             }
         }
     }

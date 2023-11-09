@@ -12,9 +12,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public final static String keyBrand = "BrandKey";
-    public final static String keyLogo = "LogoKey";
-    public final static String keyModel = "KeyModel";
+    public static String keyBrand = "BRAND_KEY";
+    public static String keyLogo = "LOGO_KEY";
     public static ArrayList<Car> cars;
 
 
@@ -30,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Car bentleyCar = new Car("Bentley", R.drawable.bentley);
 
         cars.add(bentleyCar);
+
         //bentley models
         bentleyCar.addModel("Bentaya", R.drawable.btybentaya);
         bentleyCar.addModel("Continental GT", R.drawable.btycontinentalgt);
@@ -66,6 +66,23 @@ public class MainActivity extends AppCompatActivity {
         porscheCar.addModel("Taycan 4 CrossTurismo", R.drawable.psctaycan4crossturismo);
         porscheCar.addModel("Taycan Turbo S", R.drawable.psctaycanturbos);
 
+
+        Car audiCar = new Car("Audi", R.drawable.audi);
+
+        cars.add(audiCar);
+
+        //audi models
+        audiCar.addModel("A5 Coupé", R.drawable.audia5coupe);
+        audiCar.addModel("S3 Saloon", R.drawable.audis3saloon);
+        audiCar.addModel("RS3 Sportback", R.drawable.audirs3sportback);
+        audiCar.addModel("RS6 Avante", R.drawable.audirs6avante);
+        audiCar.addModel("A7 Sportback", R.drawable.audia7sportback);
+        audiCar.addModel("RS7 Sportback", R.drawable.audirs7sportback);
+        audiCar.addModel("Q3", R.drawable.audiq3);
+        audiCar.addModel("Q4 e-tron", R.drawable.audiq4etron);
+        audiCar.addModel("Q5", R.drawable.audiq5);
+        audiCar.addModel("R8", R.drawable.audir8);
+        audiCar.addModel("TTS Coupé", R.drawable.audittscoupe);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter(getApplicationContext(), cars));

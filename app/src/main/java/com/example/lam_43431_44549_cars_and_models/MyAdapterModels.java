@@ -12,8 +12,8 @@ import java.util.List;
 
 public class MyAdapterModels extends RecyclerView.Adapter<MyViewHolder>{
 
-    Context context;
-    List<Model> models;
+    private Context context;
+    private List<Model> models;
 
     public MyAdapterModels(Context context, List<Model> models){
         this.context = context;

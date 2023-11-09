@@ -2,6 +2,7 @@ package com.example.lam_43431_44549_cars_and_models;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,20 +21,21 @@ public class ShowCar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_models);
 
-        List<Car> modelsList = new ArrayList<>();
         Intent intent = getIntent();
         String brand = intent.getStringExtra(MainActivity.keyBrand);
-        int logo = intent.getIntExtra(MainActivity.keyLogo, 0);
 
         RecyclerView recyclerView = findViewById(R.id.models_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         for(Car car : MainActivity.cars){
             if(car.getName().equals(brand)){
-                modelsList = car.modelsList;
+                recyclerView.setAdapter(new MyAdapterModels(getApplicationContext(), car.modelsList));
             }
         }
-
-        recyclerView.setAdapter(new MyAdapter(getApplicationContext(), modelsList));
     }
+
+    public void onClick(View v){
+        finish();
+    }
+
 }

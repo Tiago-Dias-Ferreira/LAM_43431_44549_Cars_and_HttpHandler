@@ -10,7 +10,7 @@ public class Car {
 
     String name;
     int logo;
-    List<Car> modelsList;
+    List<Model> modelsList;
 
     public Car(String name, int logo){
         this.name = name;
@@ -27,8 +27,7 @@ public class Car {
     }
 
     public void addModel(String brand, int logo){
-        Car model = new Car(brand,logo);
+        Model model = new Model(brand,logo);
         modelsList.add(model);
     }
-
 }

@@ -21,16 +21,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> implements Vie
     Context context;
     List<Car> cars;
 
-    List<Model>model;
-
     public MyAdapter(Context context, List<Car> cars){
         this.context = context;
         this.cars = cars;
-    }
-
-    public MyAdapter(Context context, List<Model> model){
-        this.context = context;
-        this.model = model;
     }
 
     @NonNull

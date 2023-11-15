@@ -1,18 +1,14 @@
 package com.example.lam_43431_44549_cars_and_models;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Car {
 
-    private String name;
-    private int logo;
-    private List<Model> modelsList;
+    private final String name;
+    private final int logo;
 
     public Car(String name, int logo){
         this.name = name;
         this.logo = logo;
-        modelsList = new ArrayList<>();
     }
 
     public String getName() {
@@ -21,13 +17,5 @@ public class Car {
 
     public int getLogo() {
         return logo;
-    }
-
-    public List<Model> getModelsList(){
-        return this.modelsList;
-    }
-    public void addModel(String brand, int logo){
-        Model model = new Model(brand,logo);
-        modelsList.add(model);
     }
 }

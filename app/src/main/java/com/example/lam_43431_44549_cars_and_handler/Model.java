@@ -1,4 +1,4 @@
-package com.example.lam_43431_44549_cars_and_models;
+package com.example.lam_43431_44549_cars_and_handler;
 
 public class Model {
     private String name;

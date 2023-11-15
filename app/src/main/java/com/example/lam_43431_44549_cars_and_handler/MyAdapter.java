@@ -1,6 +1,5 @@
-package com.example.lam_43431_44549_cars_and_models;
+package com.example.lam_43431_44549_cars_and_handler;
 
-import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -8,12 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> implements View.OnClickListener{

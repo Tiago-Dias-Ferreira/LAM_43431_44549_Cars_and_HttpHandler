@@ -5,4 +5,6 @@
     <string name="brandKey">Brand Key</string>
     <string name="models">Models</string>
     <string name="goBack">Go back</string>
+    <string name="url">https://hostingalunos.upt.pt/dam/</string>
+
 </resources>

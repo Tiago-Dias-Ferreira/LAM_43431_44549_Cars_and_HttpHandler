@@ -1,9 +1,6 @@
-package com.example.lam_43431_44549_cars_and_models;
-
-import android.speech.ModelDownloadListener;
+package com.example.lam_43431_44549_cars_and_handler;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Car {

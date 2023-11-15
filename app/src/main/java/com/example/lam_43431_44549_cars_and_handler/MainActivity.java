@@ -1,4 +1,4 @@
-package com.example.lam_43431_44549_cars_and_models;
+package com.example.lam_43431_44549_cars_and_handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,8 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mercedesCar.addModel("G-Wagon", R.drawable.mcdclasseg);
         mercedesCar.addModel("Classe GLE", R.drawable.mcdclassegle);
 
-        Car porscheCar = new Car("Porsche", R.drawable.porsche);
+        Car porscheCar = new Car("BMW", R.drawable.porsche);
 
         cars.add(porscheCar);
 
@@ -67,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         porscheCar.addModel("Taycan Turbo S", R.drawable.psctaycanturbos);
 
 
-        Car audiCar = new Car("Audi", R.drawable.audi);
+        Car audiCar = new Car("audi", R.drawable.audi);
 
         cars.add(audiCar);
 
@@ -85,6 +83,6 @@ public class MainActivity extends AppCompatActivity {
         audiCar.addModel("TTS Coupé", R.drawable.audittscoupe);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new MyAdapter(getApplicationContext(), cars));
+        recyclerView.setAdapter(new MyAdapter(this, cars));
     }
 }

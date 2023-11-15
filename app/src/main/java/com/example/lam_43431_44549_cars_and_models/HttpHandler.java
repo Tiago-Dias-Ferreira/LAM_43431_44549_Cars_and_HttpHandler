@@ -1,4 +1,4 @@
-package com.example.lam_43431_44549_cars_and_handler;
+package com.example.lam_43431_44549_cars_and_models;
 
 import android.util.Log;
 

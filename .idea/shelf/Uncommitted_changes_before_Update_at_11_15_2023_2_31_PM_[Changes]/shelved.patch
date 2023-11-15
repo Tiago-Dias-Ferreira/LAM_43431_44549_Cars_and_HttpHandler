@@ -1,0 +1,95 @@
+Index: app/src/main/java/com/example/lam_43431_44549_cars_and_models/ShowCar.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.lam_43431_44549_cars_and_models;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.recyclerview.widget.LinearLayoutManager;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport java.lang.reflect.Array;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class ShowCar extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_show_models);\r\n\r\n        Intent intent = getIntent();\r\n        String brand = intent.getStringExtra(MainActivity.keyBrand);\r\n\r\n        RecyclerView recyclerView = findViewById(R.id.models_recyclerView);\r\n        recyclerView.setLayoutManager(new LinearLayoutManager(this));\r\n\r\n        for(Car car : MainActivity.cars){\r\n            if(car.getName().equals(brand)){\r\n                recyclerView.setAdapter(new MyAdapterModels(getApplicationContext(), car.modelsList));\r\n            }\r\n        }\r\n    }\r\n\r\n    public void onClick(View v){\r\n        finish();\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/lam_43431_44549_cars_and_models/ShowCar.java b/app/src/main/java/com/example/lam_43431_44549_cars_and_models/ShowCar.java
+--- a/app/src/main/java/com/example/lam_43431_44549_cars_and_models/ShowCar.java	(revision c0aeb56be883f577a1e34c6b200da4e9987ece9b)
++++ b/app/src/main/java/com/example/lam_43431_44549_cars_and_models/ShowCar.java	(date 1699557190324)
+@@ -29,7 +29,7 @@
+ 
+         for(Car car : MainActivity.cars){
+             if(car.getName().equals(brand)){
+-                recyclerView.setAdapter(new MyAdapterModels(getApplicationContext(), car.modelsList));
++                recyclerView.setAdapter(new MyAdapterModels(this, car.modelsList));
+             }
+         }
+     }
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision c0aeb56be883f577a1e34c6b200da4e9987ece9b)
++++ /dev/null	(revision c0aeb56be883f577a1e34c6b200da4e9987ece9b)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: .idea/deploymentTargetDropDown.xml
+===================================================================
+diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+deleted file mode 100644
+--- a/.idea/deploymentTargetDropDown.xml	(revision c0aeb56be883f577a1e34c6b200da4e9987ece9b)
++++ /dev/null	(revision c0aeb56be883f577a1e34c6b200da4e9987ece9b)
+@@ -1,17 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="deploymentTargetDropDown">
+-    <targetSelectedWithDropDown>
+-      <Target>
+-        <type value="QUICK_BOOT_TARGET" />
+-        <deviceKey>
+-          <Key>
+-            <type value="VIRTUAL_DEVICE_PATH" />
+-            <value value="C:\Users\jorge\.android\avd\Pixel_3a_API_34_extension_level_7_x86_64.avd" />
+-          </Key>
+-        </deviceKey>
+-      </Target>
+-    </targetSelectedWithDropDown>
+-    <timeTargetWasSelectedWithDropDown value="2023-11-05T13:16:49.724748200Z" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: app/src/main/java/com/example/lam_43431_44549_cars_and_models/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.lam_43431_44549_cars_and_models;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.recyclerview.widget.LinearLayoutManager;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport android.os.Bundle;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\n\r\npublic class MainActivity extends AppCompatActivity {\r\n\r\n    public final static String keyBrand = \"BrandKey\";\r\n    public final static String keyLogo = \"LogoKey\";\r\n    public final static String keyModel = \"KeyModel\";\r\n    public static ArrayList<Car> cars;\r\n\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main);\r\n\r\n        cars = new ArrayList<>();\r\n\r\n        RecyclerView recyclerView = findViewById(R.id.recyclerView);\r\n\r\n        Car bentleyCar = new Car(\"Bentley\", R.drawable.bentley);\r\n\r\n        cars.add(bentleyCar);\r\n        //bentley models\r\n        bentleyCar.addModel(\"Bentaya\", R.drawable.btybentaya);\r\n        bentleyCar.addModel(\"Continental GT\", R.drawable.btycontinentalgt);\r\n        bentleyCar.addModel(\"Flying Spur\", R.drawable.btyflyingspur);\r\n\r\n        Car mercedesCar = new Car(\"Mercedes\", R.drawable.mercedes);\r\n\r\n        cars.add(mercedesCar);\r\n\r\n        //mercedes models\r\n        mercedesCar.addModel(\"AMG\", R.drawable.mcdamg);\r\n        mercedesCar.addModel(\"Classe A\", R.drawable.mcdclassea);\r\n        mercedesCar.addModel(\"Classe B\", R.drawable.mcdclasseb);\r\n        mercedesCar.addModel(\"Classe C\", R.drawable.mcdclassec);\r\n        mercedesCar.addModel(\"Classe D\", R.drawable.mcdclassecle);\r\n        mercedesCar.addModel(\"Classe E\", R.drawable.mcdclassee);\r\n        mercedesCar.addModel(\"G-Wagon\", R.drawable.mcdclasseg);\r\n        mercedesCar.addModel(\"Classe GLE\", R.drawable.mcdclassegle);\r\n\r\n        Car porscheCar = new Car(\"Porsche\", R.drawable.porsche);\r\n\r\n        cars.add(porscheCar);\r\n\r\n        //porsche models\r\n        porscheCar.addModel(\"718 Boxter\", R.drawable.psc718boxter);\r\n        porscheCar.addModel(\"718 Cayman\", R.drawable.psc718cayman);\r\n        porscheCar.addModel(\"718 Cayman GT4\", R.drawable.psc718caymangt4);\r\n        porscheCar.addModel(\"718 Spyder RS\", R.drawable.psc718spyderrs);\r\n        porscheCar.addModel(\"911 Carrera\", R.drawable.psc911carrera);\r\n        porscheCar.addModel(\"911 Carrera 4S\", R.drawable.psc911carrera4s);\r\n        porscheCar.addModel(\"911 GT3 RS\", R.drawable.psc911gt3rs);\r\n        porscheCar.addModel(\"911 Targa 4\", R.drawable.psc911targa4);\r\n        porscheCar.addModel(\"Panamera Executive\", R.drawable.pscpanameraexecutive);\r\n        porscheCar.addModel(\"Taycan 4 CrossTurismo\", R.drawable.psctaycan4crossturismo);\r\n        porscheCar.addModel(\"Taycan Turbo S\", R.drawable.psctaycanturbos);\r\n\r\n\r\n        recyclerView.setLayoutManager(new LinearLayoutManager(this));\r\n        recyclerView.setAdapter(new MyAdapter(getApplicationContext(), cars));\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/lam_43431_44549_cars_and_models/MainActivity.java b/app/src/main/java/com/example/lam_43431_44549_cars_and_models/MainActivity.java
+--- a/app/src/main/java/com/example/lam_43431_44549_cars_and_models/MainActivity.java	(revision c0aeb56be883f577a1e34c6b200da4e9987ece9b)
++++ b/app/src/main/java/com/example/lam_43431_44549_cars_and_models/MainActivity.java	(date 1699557162496)
+@@ -68,6 +68,6 @@
+ 
+ 
+         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+-        recyclerView.setAdapter(new MyAdapter(getApplicationContext(), cars));
++        recyclerView.setAdapter(new MyAdapter(this, cars));
+     }
+ }
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"jbr-17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision c0aeb56be883f577a1e34c6b200da4e9987ece9b)
++++ b/.idea/misc.xml	(date 1700058413086)
+@@ -1,9 +1,4 @@
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/build/classes" />
+-  </component>
+-  <component name="ProjectType">
+-    <option name="id" value="Android" />
+-  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file

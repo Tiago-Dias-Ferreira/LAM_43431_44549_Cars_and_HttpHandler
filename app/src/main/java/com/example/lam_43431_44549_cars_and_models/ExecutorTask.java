@@ -1,9 +1,6 @@
 package com.example.lam_43431_44549_cars_and_models;
 
-import static java.lang.Thread.sleep;
-
 import android.os.Handler;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.concurrent.ExecutorService;
@@ -12,7 +9,6 @@ public class ExecutorTask {
     ExecutorService executor;
     Handler resultHandler;
     TextView textView;
-    ProgressBar progressBar;
     String jsonStr;
 
 
@@ -21,17 +17,13 @@ public class ExecutorTask {
         this.resultHandler = resultHandler;
         this.textView = textView;
 
-        this.executor.execute(new Runnable() {
-            @Override
-            public void run() {
-                doWork(url);
-                atualizaInterface(jsonStr);
-            }
+        this.executor.execute(() -> {
+            doWork(url);
+            atualizaInterface(jsonStr);
         });
     }
 
     private void doWork(String url) {
-        String jsonStr;
         HttpHandler handler;
 
         handler = new HttpHandler();
@@ -40,11 +32,6 @@ public class ExecutorTask {
 
     private void atualizaInterface(String mensagem) {
 
-        resultHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                textView.setText(mensagem);
-            }
-        });
+        resultHandler.post(() -> textView.setText(mensagem));
     }
 }

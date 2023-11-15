@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         cars.add(mercedesCar);
 
-        Car porscheCar = new Car("BMW", R.drawable.porsche);
+        Car porscheCar = new Car("BMW", R.drawable.bmw);
 
         cars.add(porscheCar);
 

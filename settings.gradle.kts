@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "LAM_43431_44549_Cars_and_Models"
+rootProject.name = "LAM_43431_44549_Cars_and_HttpHandler"
 include(":app")
  

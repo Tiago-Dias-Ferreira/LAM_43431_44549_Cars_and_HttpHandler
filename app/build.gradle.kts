@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.lam_43431_44549_cars_and_models"
+    namespace = "com.example.lam_43431_44549_cars_and_httphandler"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.lam_43431_44549_cars_and_models"
+        applicationId = "com.example.lam_43431_44549_cars_and_httphandler"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
